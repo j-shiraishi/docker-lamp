@@ -15,14 +15,8 @@ services:
   db:
     restart: always
     build: ./db
-    # env_file:
-    #   - ./db/mysql.env
-    environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: sample
-      MYSQL_USER: user
-      MYSQL_PASSWORD: password
-      TZ: Asia/Tokyo
+    env_file:
+      - ./db/mysql.env
     ports:
       - 3306:3306
     volumes:
