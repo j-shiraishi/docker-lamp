@@ -50,3 +50,7 @@ $ docker-compose ps
 ```
 http://localhost/index.php
 ```
+
+## 課題
+- docker-compose.yml で mysql.env　を外部読み込みできないエラーの解消
+- 各Dockerfileの設定を公式イメージベースから軽量化カスタマイズ
