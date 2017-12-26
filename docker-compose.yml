@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+  web:
+    restart: always
+    build: ./web
+    links:
+      - db
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./web/src/:/var/www/html/
+
+  db:
+    restart: always
+    build: ./db
+    # env_file:
+    #   - ./db/mysql.env
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: sample
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      TZ: Asia/Tokyo
+    ports:
+      - 3306:3306
+    volumes:
+      - ./db/mysql:/var/lib/mysql
+
+  phpmyadmin:
+    restart: always
+    build: ./phpmyadmin
+    env_file:
+      - ./phpmyadmin/phpmyadmin.env
+    links:
+      - db
+    ports:
+      - 8080:80
+    volumes:
+      - ./phpmyadmin/session:/session
