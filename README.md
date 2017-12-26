@@ -34,15 +34,19 @@ docker-lamp
 ```
 $ git clone https://github.com/nino0813g/docker-lamp.git
 ```
-2. コンテナビルド起動
+2. ディレクトリ移動
+```
+$ cd docker-lamp
+```
+3. コンテナビルド起動
 ```
 $ docker-compose up -d --build
 ```
-3. コンテナ起動確認
+4. コンテナ起動確認
 ```
 $ docker-compose ps
 ```
-4. ブラウザアクセス
+5. ブラウザアクセス
 ```
 http://localhost/index.php
 ```
