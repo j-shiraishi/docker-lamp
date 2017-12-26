@@ -29,7 +29,7 @@ docker-lamp
     └── src             -> 作業ディレクトリ
 ```
 
-## 実行手順
+## コンテナ起動手順
 1. ダウンロード
 ```
 $ git clone https://github.com/nino0813g/docker-lamp.git
@@ -46,7 +46,7 @@ $ docker-compose up -d
 ```
 $ docker-compose ps
 ```
-5. ブラウザアクセス（ここでは以下の設定）
+5. ブラウザアクセス
 ```
 http://localhost/index.php
 ```
